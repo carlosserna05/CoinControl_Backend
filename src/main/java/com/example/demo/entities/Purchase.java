@@ -38,4 +38,8 @@ public class Purchase {
         PAGADO
     }
 
+    @ManyToOne
+    @JoinColumn(name = "purchase_Id")
+    private Purchase purchase;
+
 }
