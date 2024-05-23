@@ -11,21 +11,17 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name ="purchasedetails")
+@Table(name ="interessettings")
 
-public class PurchaseDetail {
+public class InterestSettings {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Product product;
-    private Integer quantity;
-    private BigDecimal unitPrice;
-    private BigDecimal subtotal;
+    private BigDecimal interestRate;
+    private BigDecimal latePaymentRate;
 
 
-    @ManyToOne
-    @JoinColumn(name = "purchasedetails_Id")
-    private PurchaseDetail purchaseDetail;
+
 }

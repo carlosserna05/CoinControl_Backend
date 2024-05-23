@@ -23,4 +23,7 @@ public class Product {
     private String description;
     private BigDecimal price;
 
+    @ManyToOne
+    @JoinColumn(name = "product_Id")
+    private Customer product;
 }
