@@ -25,6 +25,7 @@ public class Customer {
     private String numberPhone;
     private String email;
     private String address;
+    private String dni;
 
     private BigDecimal creditLimit;
     private LocalDate monthlyPaymentDate;
