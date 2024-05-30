@@ -20,11 +20,11 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Client client;
+/*
+    private Customer customer;
     private BigDecimal currentBalance;
     private List<Purchase> purchases;
-
+*/
     @ManyToOne
     @JoinColumn(name = "customer_Id")
     private Customer customer;

@@ -21,12 +21,14 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Customer customer;
+    //private Customer customer;
     private LocalDate date;
     private BigDecimal total;
+    @Enumerated(EnumType.STRING)
     private TypeCredit typeCredit;
+    @Enumerated(EnumType.STRING)
     private SalesStatus salesStatus;
-    private List<PurchaseDetail> purchaseDetails;
+    //private List<PurchaseDetail> purchaseDetails;
 
     public enum TypeCredit{
         VALOR_FUTURO,
@@ -39,7 +41,16 @@ public class Purchase {
     }
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @OneToMany(mappedBy = "purchase")
+    private List<PurchaseDetail> purchaseDetails;
+
+
+    /*
+    @ManyToOne
     @JoinColumn(name = "purchase_Id")
     private Purchase purchase;
-
+*/
 }
